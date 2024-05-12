@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+  <style type="text/css">
+    body {
+      font-family: 'Lucida Sans';
+      background-color: bisque;
+    }
+    {{! Source: https://www.w3schools.com/css/css3_buttons.asp }}
+    button{
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+   <h1>{{title}}</h1>
+   <h2>{{body}}</h2>
+   <button type="button" id="register_button"> Register to use the app! </button>
+   <button type="button" id="useapp_button"> Login to use the app! </button>
+    <button type="button" id="see_users_button"> See list of users (ADMIN ONLY) </button>
+   {{! js files}}
+   <script src="/routes/eventListeners.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>{{title}}</title>
+<style type="text/css">
+body{
+    font-family: 'Lucida Sans';
+    background-color: bisque;
+}
+button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+input, label{
+    padding: 10px;
+    font-size: 20px;
+}
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 50%;
+    background-color: #EEEEEE;
+    font-size: 20px;
+}
+td {
+    border: 1px solid black;
+    padding: 12px;
+}
+</style>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <div id="weatherInfo"> 
+        <label for="cityInput">City:</label>
+        <input type="text" id="cityInput" placeholder="Enter city">
+        <button type="button" id="weather_button"> Get Weather </button>
+        <button type="button" id="return_button"> Return to main page </button> 
+        {{#if weather}}
+        <div>
+            <h2>Weather in {{weather.name}}</h2>
+            <p>Temperature: {{temp}} Celsius</p>
+            <p>Main: {{main}}</p>
+            <p>Description: {{description}}</p>
+            <p>Humidity: {{weather.main.humidity}}%</p>
+        </div>
+        {{/if}}
+        {{#if error}}
+        <p>{{error}}</p>
+        {{/if}}
+    </div>
+    <script src="/routes/eventListeners.js"></script>
+</body>
+</html>

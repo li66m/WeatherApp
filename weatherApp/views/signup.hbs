@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+  <style type="text/css">
+    body {
+      font-family: 'Lucida Sans';
+      background-color: bisque;
+    }
+    button{
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+   <h1>{{title}}</h1>
+   <body>
+      Welcome! Please enter info.
+      <div id="signupPrompt">
+         <label for="userInput">Username:</label>
+         <input type="text" id="userInput" placeholder="Username">
+         <label for="passInput">Password:</label>
+         <input type="password" id="passInput" placeholder="Password"> <br><br>
+         <button type="button" id="signup_button"> Sign Up </button>
+      </div>
+      <script src="/routes/eventListeners.js"></script>
+   </body>
+</body>
+</html>
