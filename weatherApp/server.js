@@ -1,31 +1,5 @@
-/*
-Basic express server with middleware, SQLite database, and Handlebars template rendering.
-
-The server allows client to find chord progressions of songs in
-its SQLite database. The database provided has chord progressions
-of some 1200 popular jazz standards.
-
-Here we use server-side templating using the Handlebars template engine to generate the HTML for the response pages to send to the client.
-Handlebars is a popular templating format/engine.
-Other popular ones include: PUG (formarly Jade), EJS, Liquid, Mustache.
-Handlebar views are rendered from data obtained from the SQLite database.
-
-The template engine merges data provided in the form of a javascript object
-with html represented in the .hbs handlebars template files.
-The combination is 'rendered' and sent to the client as .html.
-
-This is an Express 4.x application.
-Here we use a routes module. We put our route handling code in
-a separate module that is required by the main app.
-
-We use the exported route functions in the 'use' and 'get'
-routes. Typically 'use' calls functions that invoke next() whereas our
-get and post routes send responses to the client.
-*/
-
 //Cntl+C to stop server
 
-var http = require('http');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
