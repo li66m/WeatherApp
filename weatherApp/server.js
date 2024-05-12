@@ -26,6 +26,7 @@ app.use(logger('dev'));
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/routes', express.static(path.join(__dirname, 'routes')))
+app.use('/CSS', express.static(path.join(__dirname, 'CSS')))
 //routes
 app.get('/index.html', routes.index);
 app.get('/signup', routes.signup);
