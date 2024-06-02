@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var weatherButton = document.getElementById('weather_button')
     var returnButton = document.getElementById('return_button')
     var seeUsersButton = document.getElementById('see_users_button')
+    var removeUserButton = document.getElementById('remove_button')
 
     // checking if all buttons exist before we add event listeners and functionality to them.
     if (registerButton) {
@@ -57,6 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (seeUsersButton){
         seeUsersButton.addEventListener('click', function(){
             window.location.href = '/users'
+        })
+    }
+
+    if (removeUserButton){
+        removeUserButton.addEventListener('click', function(){
+            let username = document.getElementById('userRemoval').value
         })
     }
 });

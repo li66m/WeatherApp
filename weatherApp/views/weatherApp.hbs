@@ -14,7 +14,7 @@
         <button type="button" id="return_button"> Return to main page </button> 
         {{#if weather}}
         <div>
-            <h2>Weather in {{weather.name}}</h2>
+            <h2>Weather in {{weather.name}},{{weather.sys.country}}</h2>
             <p>Temperature: {{temp}} Celsius</p>
             <p>Main: {{main}}</p>
             <p>Description: {{description}}</p>
