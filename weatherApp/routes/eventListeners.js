@@ -64,6 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (removeUserButton){
         removeUserButton.addEventListener('click', function(){
             let username = document.getElementById('userRemoval').value
+            if (username === ''){
+                alert('Please enter a username.')
+                return
+            }
+            window.location.href = '/removeUser?user=' + encodeURIComponent(username)
         })
     }
 });

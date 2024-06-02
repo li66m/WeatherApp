@@ -145,3 +145,38 @@ exports.weatherApp = function(request, response){
 		})
 	}).end()
 }
+
+exports.removeUser = function(request, response){
+	// getting the user from the query and removing it from the database
+	let user = request.query.user
+	// if there's no user, then an error message is displayed
+	if(!user){
+		console.error('No user provided.')
+		response.status(400).send('No user provided.')
+		return
+	}
+
+	// now we check if the user actually exists in the database
+	let checkUser = "SELECT userid FROM users WHERE userid = ?";
+	db.get(checkUser, [user], function(err, row){
+		if(!row){
+			response.render('index', {title: 'Welcome to the weather app!', body: 'ERROR: User not found in database.'})
+			return
+		}
+		if(err){
+			console.error(err)
+			response.status(500).send('Internal server error.')
+			return
+		}
+		// since the user exists, we can remove it from the database
+		let sqlString = "DELETE FROM users WHERE userid = ?"
+		db.run(sqlString, [user], function(err){
+			if(err){
+				console.error(err)
+				response.status(500).send('Internal server error.')
+				return
+			}
+			response.render('index', {title: 'Welcome to the weather app!', body: 'ADMIN ANNOUNCEMENT. User ' + user + ' was removed from database.'})
+		})
+	})
+}

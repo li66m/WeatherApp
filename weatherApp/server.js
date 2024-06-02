@@ -35,6 +35,7 @@ app.get('/createUser', routes.createUser);
 app.use(routes.authenticate); //authenticate user at these routes.
 app.get('/weatherApp', routes.weatherApp);
 app.get('/users', routes.users);
+app.get('/removeUser', routes.removeUser);
 
 
 
